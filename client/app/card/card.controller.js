@@ -52,8 +52,11 @@ function getMathSymbol(mathFunction) {
  * CardController of the yoFlashcardAppApp
  */
 angular.module('yoFlashcardFullstackApp')
-  .controller('CardCtrl', function ($scope, myfactory) {
+  .controller('CardCtrl', function ($scope, myfactory, $location) {
 
+    if (myfactory.selectedMaxNumber === 0) {
+      $location.path('/settings');
+    }
     $scope.data = myfactory;
     $scope.mathSymbol = getMathSymbol(myfactory.selectedMathFunction);
 
