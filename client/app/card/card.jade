@@ -1,2 +1,42 @@
-.col-md-12
-    | This is the card view.
+.container.text-center
+
+  div(ng-include='"components/navbar/navbar.html"')
+
+  .h1
+    .row
+      .col-xs-6.text-right Current Score:
+      .col-xs-6.text-left {{data.score}}
+
+  .well.h1
+    .row
+      .col-xs-6.text-right
+      .col-xs-6.text-left {{firstNumber}}
+    .row
+      .col-xs-6.text-right {{mathSymbol}}
+      .col-xs-6.text-left {{secondNumber}}
+
+    hr
+
+    form.form-horizontal(role='form')
+      .form-group
+        label.col-sm-4.control-label.input-lg(for='maxNumber') Answer:
+        .col-sm-4
+          input.form-control.input-lg(id='maxNumber', type='text', autofocus, ng-model='enteredAnswer', placeholder="Enter your answer", required)
+
+    .form-group
+        a.btn.btn-lg.btn-success(ng-click='verify()') Check Answer
+        | &nbsp;
+        a.btn.btn-lg.btn-primary(ng-click='nextQuestion()') Skip Question
+
+  .h4.text-muted
+    .row
+      .col-xs-6.text-right Current Operation:
+      .col-xs-6.text-left {{data.selectedMathFunction}}
+    .row
+      .col-xs-6.text-right Largest Number:
+      .col-xs-6.text-left {{data.selectedMaxNumber}}
+
+  .footer
+    p.text-muted
+      span.glyphicon.glyphicon-heart
+      | &nbsp; from Dad
