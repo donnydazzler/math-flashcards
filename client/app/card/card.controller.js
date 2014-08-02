@@ -82,7 +82,7 @@ angular.module('yoFlashcardFullstackApp')
         $scope.displayResponse = true;
         var imgUrl = myfactory.correctImages[getRandomInt(0, myfactory.correctImages.length + 1)];
         $scope.responseSrc = imgUrl;
-//        console.log('Image URL: ' + imgUrl);
+        console.log('Image: ' + imgUrl);
         $scope.nextQuestion();
       }
       $scope.enteredAnswer = null;
