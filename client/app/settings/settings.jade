@@ -2,28 +2,36 @@
 
   div(ng-include='"components/navbar/navbar.html"')
 
-  .jumbotron
-    h2 Let's set you up!
+  .well
+    .row
+      .h1 Let's set you up!
+    .row
+      .h1
 
     form.form-horizontal(role='form')
-      .form-group
-        label.col-sm-4.control-label(for='mathFunctionSelect') Math Operation
-        .col-sm-4
-          select.form-control(id='mathFunctionSelect', ng-model='selectedMathFunction')
-            option(ng-repeat='fn in mathFunctions') {{fn}}
+      .row
+        .form-group
+          label.col-sm-4.control-label(for='mathFunctionSelect') Math Operation
+          .col-sm-4
+            select.form-control(id='mathFunctionSelect', ng-model='selectedMathFunction')
+              option(ng-repeat='fn in mathFunctions') {{fn}}
 
-      .form-group
-        label.col-sm-4.control-label(for='maxNumberSelect') Largest Number
-        .col-sm-4
-          select.form-control(id='maxNumberSelect', ng-model='selectedMaxNumber')
-            option(ng-repeat='i in getNumber(maxNumber) track by $index') {{$index + 1}}
+      .row
+        .form-group
+          label.col-sm-4.control-label(for='maxNumberSelect') Largest Number
+          .col-sm-4
+            select.form-control(id='maxNumberSelect', ng-model='selectedMaxNumber')
+              option(ng-repeat='i in getNumber(maxNumber) track by $index') {{$index + 1}}
 
-  .row
-    .col-lg-12.text-center
-      a.btn.btn-lg.btn-success(ng-href='#/card', ng-click='saveSettings()') Start&nbsp;
-        span.glyphicon.glyphicon-ok
+      .row
+        .col-md-1.col-md-offset-4
+          a.btn.btn-lg.btn-success(ng-href='#/card', ng-click='saveSettings()') Start&nbsp;
+            span.glyphicon.glyphicon-ok
+        .col-md-1.col-md-offset-1
+          a.btn.btn-lg.btn-danger(ng-click='resetSettings()') Reset&nbsp;
+            span.glyphicon.glyphicon-refresh
 
   .footer
     p.text-muted
       span.glyphicon.glyphicon-heart
-      | &nbsp; from Dad
+      | &nbsp; from Greg
