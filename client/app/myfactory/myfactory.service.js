@@ -26,7 +26,6 @@ angular.module('yoFlashcardFullstackApp')
         "http://cdn.bulbagarden.net/upload/thumb/b/bf/684Swirlix.png/250px-684Swirlix.png",
         "http://pbskids.org/learn/img/tada.png",
         "http://www.storytimewow.com/wp-content/uploads/2013/06/curious_avatar.jpg",
-        "http://assetlibrary.supadu.com/images/working/s144434/1.png",
         "http://assetlibrary.supadu.com/images/working/s146017/1.png",
         "http://assetlibrary.supadu.com/images/working/s146009/1.png",
         "http://img4.wikia.nocookie.net/__cb20121023193826/my-weirder-school-daze/images/3/30/Arlo_Jervis.png",
@@ -49,7 +48,14 @@ angular.module('yoFlashcardFullstackApp')
         "http://icons.iconarchive.com/icons/designbolts/rio-2-movie/512/Rio2-Jewel-icon.png",
         "http://img2.wikia.nocookie.net/__cb20140404173007/rio/images/8/8f/Rio2-Gabi-2-icon.png",
         "http://img1.wikia.nocookie.net/__cb20131014053013/martha-speaks/images/b/b9/Martha.png",
-        "http://bloggingmatters.net/wp-content/uploads/2013/01/gangnam-style.png"
+        "http://bloggingmatters.net/wp-content/uploads/2013/01/gangnam-style.png",
+        "http://upload.wikimedia.org/wikipedia/en/thumb/6/65/Arthur_Read.svg/648px-Arthur_Read.svg.png",
+        "http://img2.wikia.nocookie.net/__cb20130118044954/arthur/images/2/25/Arthur_2.png",
+        "http://images3.wikia.nocookie.net/__cb20130209061141/arthur/images/2/23/Binky.png",
+        "http://static.tvtropes.org/pmwiki/pub/images/fern_8114.png",
+        "http://31.media.tumblr.com/4f73c45bac4f5b0387a5b1d2bda64259/tumblr_mt3q3mFvlS1svdumlo1_500.gif",
+        "http://huskiesinwonderland.files.wordpress.com/2013/03/emily_promo.png",
+        "http://static.tvtropes.org/pmwiki/pub/images/george_promo_726.png"
       ]
     };
 
