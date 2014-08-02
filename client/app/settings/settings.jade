@@ -9,18 +9,18 @@
       .form-group
         label.col-sm-4.control-label(for='mathFunctionSelect') Math Operation
         .col-sm-4
-          select.form-control(id='mathFunctionSelect', ng-model='data.selectedMathFunction')
+          select.form-control(id='mathFunctionSelect', ng-model='selectedMathFunction')
             option(ng-repeat='fn in mathFunctions') {{fn}}
 
       .form-group
         label.col-sm-4.control-label(for='maxNumberSelect') Largest Number
         .col-sm-4
-          select.form-control(id='maxNumberSelect', ng-model='data.selectedMaxNumber')
+          select.form-control(id='maxNumberSelect', ng-model='selectedMaxNumber')
             option(ng-repeat='i in getNumber(maxNumber) track by $index') {{$index + 1}}
 
   .row
     .col-lg-12.text-center
-      a.btn.btn-lg.btn-success(ng-href='#/card') Start&nbsp;
+      a.btn.btn-lg.btn-success(ng-href='#/card', ng-click='saveSettings()') Start&nbsp;
         span.glyphicon.glyphicon-ok
 
   .footer

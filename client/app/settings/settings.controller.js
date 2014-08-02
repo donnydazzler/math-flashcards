@@ -8,7 +8,10 @@
  * ConfigController of the yoFlashcardAppApp
  */
 angular.module('yoFlashcardFullstackApp')
-  .controller('SettingsCtrl', function ($scope, myfactory) {
+  .controller('SettingsCtrl', function ($scope, $cookieStore, myfactory) {
+
+    $scope.selectedMathFunction = myfactory.selectedMathFunction;
+    $scope.selectedMaxNumber = myfactory.selectedMaxNumber;
 
     $scope.mathFunctions = [
       'Addition',
@@ -21,6 +24,14 @@ angular.module('yoFlashcardFullstackApp')
       return new Array(num);
     };
 
-    $scope.data = myfactory;
+    $scope.saveSettings = function () {
+      console.log('saving settings...');
+      console.log('math function: ' + $scope.selectedMathFunction);
+      console.log('max number: ' + $scope.selectedMaxNumber);
+      $cookieStore.put('math-flashcards.selectedMathFunction', $scope.selectedMathFunction);
+      $cookieStore.put('math-flashcards.selectedMaxNumber', $scope.selectedMaxNumber);
+      myfactory.selectedMathFunction = $scope.selectedMathFunction;
+      myfactory.selectedMaxNumber = $scope.selectedMaxNumber;
+    };
 
   });

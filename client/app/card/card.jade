@@ -5,7 +5,7 @@
   .h1
     .row
       .col-xs-6.text-right Current Score:
-      .col-xs-6.text-left {{data.score}}
+      .col-xs-6.text-left {{score}}
 
   .well.h1
     .row
@@ -17,26 +17,29 @@
 
     hr
 
-    form.form-horizontal(role='form')
+    form.form-horizontal(role='form', ng-submit='verify()', ng-keypress='hideResponse()')
       .form-group
-        label.col-sm-4.control-label.input-lg(for='maxNumber') Answer:
+        label.col-sm-4.control-label.input-lg(for='answer') Answer:
         .col-sm-4
-          input.form-control.input-lg(id='maxNumber', type='text', autofocus, ng-model='enteredAnswer', placeholder="Enter your answer", required)
+          input.form-control.input-lg(id='answer', type='text', autofocus, ng-model='enteredAnswer', placeholder="Enter your answer")
 
     .form-group
         a.btn.btn-lg.btn-success(ng-click='verify()') Check Answer
         | &nbsp;
-        a.btn.btn-lg.btn-primary(ng-click='nextQuestion()') Skip Question
+        a.btn.btn-lg.btn-primary(ng-click='nextQuestion()') Next Question
 
   .h4.text-muted
     .row
       .col-xs-6.text-right Current Operation:
-      .col-xs-6.text-left {{data.selectedMathFunction}}
+      .col-xs-6.text-left {{selectedMathFunction}}
     .row
       .col-xs-6.text-right Largest Number:
-      .col-xs-6.text-left {{data.selectedMaxNumber}}
+      .col-xs-6.text-left {{selectedMaxNumber}}
 
   .footer
     p.text-muted
       span.glyphicon.glyphicon-heart
       | &nbsp; from Dad
+
+.img-result
+  img(ng-src='{{responseSrc}}', ng-click='hideResponse()', ng-show='displayResponse')

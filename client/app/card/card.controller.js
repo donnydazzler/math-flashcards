@@ -6,19 +6,19 @@ function getRandomInt(min, max) {
 }
 
 // Calculate the answer
-function getAnswer(num1, num2, fn) {
+function getAnswer(num1, num2, mathFunction) {
   var answer;
 
-  if (fn === 'Addition') {
+  if (mathFunction === 'Addition') {
     answer = Number(num1) + num2;
   }
 
-  if (fn === 'Subtraction') {
+  if (mathFunction === 'Subtraction') {
     answer = Number(num1) - num2;
   }
 
 
-  if (fn === 'Multiplication') {
+  if (mathFunction === 'Multiplication') {
     answer = Number(num1) * num2;
   }
 
@@ -52,12 +52,15 @@ function getMathSymbol(mathFunction) {
  * CardController of the yoFlashcardAppApp
  */
 angular.module('yoFlashcardFullstackApp')
-  .controller('CardCtrl', function ($scope, myfactory, $location) {
+  .controller('CardCtrl', function ($scope, myfactory, $location, $cookieStore) {
 
     if (myfactory.selectedMaxNumber === 0) {
       $location.path('/settings');
     }
-    $scope.data = myfactory;
+
+    $scope.score = myfactory.score;
+    $scope.selectedMathFunction = myfactory.selectedMathFunction;
+    $scope.selectedMaxNumber = myfactory.selectedMaxNumber;
     $scope.mathSymbol = getMathSymbol(myfactory.selectedMathFunction);
 
     $scope.nextQuestion = function () {
@@ -72,14 +75,22 @@ angular.module('yoFlashcardFullstackApp')
 
     $scope.verify = function () {
       if ($scope.answer === Number($scope.enteredAnswer)) {
-        $scope.result = null;
-        myfactory.score += 10;
+        $scope.score += 10;
+        $cookieStore.put('math-flashcards.score', $scope.score);
+
+        // display random correct image
+        $scope.displayResponse = true;
+        var imgUrl = myfactory.correctImages[getRandomInt(0, myfactory.correctImages.length + 1)];
+        $scope.responseSrc = imgUrl;
+//        console.log('Image URL: ' + imgUrl);
         $scope.nextQuestion();
-      } else {
-        $scope.result = false;
       }
       $scope.enteredAnswer = null;
     };
 
     $scope.nextQuestion();
+
+    $scope.hideResponse = function () {
+      $scope.displayResponse = false;
+    };
   });
