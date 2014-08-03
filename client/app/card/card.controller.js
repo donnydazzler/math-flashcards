@@ -54,26 +54,34 @@ function getMathSymbol(mathFunction) {
 angular.module('yoFlashcardFullstackApp')
   .controller('CardCtrl', function ($scope, myfactory, $location, $cookieStore) {
 
-    if (myfactory.selectedMaxNumber === 0) {
+    if ($cookieStore.get('math-flashcards.selectedMaxNumber') === 0) {
       $location.path('/settings');
     }
 
-    $scope.score = myfactory.score;
-    $scope.selectedMathFunction = myfactory.selectedMathFunction;
-    $scope.selectedMaxNumber = myfactory.selectedMaxNumber;
-    $scope.mathSymbol = getMathSymbol(myfactory.selectedMathFunction);
+    // get data from cookie
+    $scope.selectedMathFunction = $cookieStore.get('math-flashcards.selectedMathFunction');
+    $scope.selectedMaxNumber = $cookieStore.get('math-flashcards.selectedMaxNumber');
+    $scope.score = $cookieStore.get('math-flashcards.score') || 0;
 
+    // determine math symbol
+    $scope.mathSymbol = getMathSymbol($scope.selectedMathFunction);
+
+    // setup question
     $scope.nextQuestion = function () {
-      $scope.firstNumber = getRandomInt(0, Number(myfactory.selectedMaxNumber) + 1);
-      $scope.secondNumber = getRandomInt(0, Number(myfactory.selectedMaxNumber) + 1);
+      $scope.firstNumber = getRandomInt(0, Number($scope.selectedMaxNumber) + 1);
+      $scope.secondNumber = getRandomInt(0, Number($scope.selectedMaxNumber) + 1);
       if ($scope.firstNumber < $scope.secondNumber) {
         $scope.nextQuestion();
       }
-      $scope.answer = getAnswer($scope.firstNumber, $scope.secondNumber, myfactory.selectedMathFunction);
+      $scope.answer = getAnswer($scope.firstNumber, $scope.secondNumber, $scope.selectedMathFunction);
       $scope.enteredAnswer = null;
     };
 
+    // verify answer
     $scope.verify = function () {
+      if ($scope.enteredAnswer === null) {
+        return;
+      }
       if ($scope.answer === Number($scope.enteredAnswer)) {
         $scope.score += 10;
         $cookieStore.put('math-flashcards.score', $scope.score);
@@ -88,8 +96,10 @@ angular.module('yoFlashcardFullstackApp')
       $scope.enteredAnswer = null;
     };
 
+    // set question
     $scope.nextQuestion();
 
+    // hide image
     $scope.hideResponse = function () {
       $scope.displayResponse = false;
     };
