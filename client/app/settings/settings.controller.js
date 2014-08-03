@@ -10,35 +10,35 @@
 angular.module('yoFlashcardFullstackApp')
   .controller('SettingsCtrl', function ($scope, $cookieStore, myfactory) {
 
+    // setup drop-down data
     $scope.mathFunctions = [
       'Addition',
       'Subtraction',
       'Multiplication'
     ];
 
+    // setup drop-down data
     $scope.maxNumber = 12;
     $scope.getNumber = function (num) {
       return new Array(num);
     };
 
-    $scope.selectedMathFunction = myfactory.selectedMathFunction;
-    $scope.selectedMaxNumber = myfactory.selectedMaxNumber;
-//    $scope.score = myfactory.score;
+    // set drop-down values if in cookie
+    $scope.selectedMathFunction = $cookieStore.get('math-flashcards.selectedMathFunction') || '';
+    $scope.selectedMaxNumber = $cookieStore.get('math-flashcards.selectedMaxNumber') || 0;
 
     $scope.saveSettings = function () {
       $cookieStore.put('math-flashcards.selectedMathFunction', $scope.selectedMathFunction);
       $cookieStore.put('math-flashcards.selectedMaxNumber', $scope.selectedMaxNumber);
-      myfactory.selectedMathFunction = $scope.selectedMathFunction;
-      myfactory.selectedMaxNumber = $scope.selectedMaxNumber;
     };
 
     $scope.resetSettings = function () {
       $cookieStore.put('math-flashcards.selectedMathFunction', '');
       $cookieStore.put('math-flashcards.selectedMaxNumber', 0);
       $cookieStore.put('math-flashcards.score', 0);
-      $scope.selectedMathFunction = myfactory.selectedMathFunction = '';
-      $scope.selectedMaxNumber = myfactory.selectedMaxNumber = 0;
-      $scope.score = myfactory.score = 0;
+      $scope.selectedMathFunction = '';
+      $scope.selectedMaxNumber = 0;
+      $scope.score = 0;
     };
 
   });
