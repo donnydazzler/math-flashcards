@@ -2,10 +2,9 @@
 
   div(ng-include='"components/navbar/navbar.html"')
 
-  .h1
-    .row
-      .col-xs-6.text-right Score:
-      .col-xs-6.text-left {{score}}
+  .row.h1
+    .col-xs-6.text-right Score:
+    .col-xs-6.text-left {{score}}
 
   .well.h1
     .row
@@ -15,25 +14,25 @@
       .col-xs-6.text-right {{mathSymbol}}
       .col-xs-6.text-left {{secondNumber}}
 
-    hr
+  hr
 
-    form.form-horizontal(role='form', ng-submit='verify()', ng-keypress='hideResponse()')
-        .form-group
-          .col-sm-3
-          .col-sm-6
-            //- label.col-sm-4.control-label.input-lg(for='answer') Answer:
-            input.form-control.input-lg(id='answer', size='5', type='number', autofocus, placeholder='Enter your answer', ng-model='enteredAnswer')
-          .col-sm-3
+  form.form-horizontal(role='form', ng-submit='verify()', ng-keypress='hideResponse()')
+      .form-group
+        .col-sm-3
+        .col-sm-6
+          //- label.col-sm-4.control-label.input-lg(for='answer') Answer:
+          input.form-control.input-lg(id='answer', size='5', type='number', autofocus, placeholder='Enter your answer', ng-model='enteredAnswer')
+        .col-sm-3
 
-      hr
+  hr
 
-      .row
-        .col-sm-3
-        .col-sm-3
-          a.btn.btn-lg.btn-success(ng-click='verify()') Check Answer
-        .col-sm-3
-          a.btn.btn-lg.btn-primary(ng-click='nextQuestion()') Skip Question
-        .col-sm-3
+  .row
+    .col-sm-3
+    .col-sm-3
+      a.btn.btn-lg.btn-success(ng-click='verify()') Check Answer
+    .col-sm-3
+      a.btn.btn-lg.btn-primary(ng-click='nextQuestion()') Skip Question
+    .col-sm-3
 
   .h4.text-muted
     .row
@@ -43,10 +42,7 @@
       .col-xs-6.text-right Largest Number:
       .col-xs-6.text-left {{selectedMaxNumber}}
 
-  .footer
-    p.text-muted
-      span.glyphicon.glyphicon-heart
-      | &nbsp; from Greg
+  div(ng-include='"components/footer/footer.html"')
 
-.img-result
-  img.img-responsive(ng-src='{{responseSrc}}', ng-click='hideResponse()', ng-show='displayResponse')
+  .img-result
+    img.img-responsive(ng-src='{{responseSrc}}', ng-click='hideResponse()', ng-show='displayResponse')
