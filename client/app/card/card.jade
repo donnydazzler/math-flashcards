@@ -11,7 +11,7 @@
       .col-xs-6.text-right
       .col-xs-6.text-left {{firstNumber}}
     .row
-      .col-xs-6.text-right {{mathSymbol}}
+      .col-xs-6.text-right(ng-bind-html='mathSymbol')
       .col-xs-6.text-left {{secondNumber}}
 
   hr
