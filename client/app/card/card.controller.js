@@ -22,12 +22,12 @@ function getAnswer(num1, num2, mathFunction) {
 
   if (mathFunction === 'Multiplication') {
     answer = Number(num1) * num2;
-    symbol = '*';
+    symbol = '&times;';
   }
 
   if (mathFunction === 'Division') {
     answer = Number(num1) / num2;
-    symbol = '/';
+    symbol = '&divide;';
   }
 
   return {
@@ -38,10 +38,10 @@ function getAnswer(num1, num2, mathFunction) {
 
 /**
  * @ngdoc function
- * @name yoFlashcardAppApp.controller:CardCtrl
+ * @name yoFlashcardFullstackApp.controller:CardCtrl
  * @description
  * # CardCtrl
- * CardCtrl of the yoFlashcardAppApp
+ * CardCtrl of the yoFlashcardFullstackApp
  */
 angular.module('yoFlashcardFullstackApp')
   .controller('CardCtrl', function ($scope, $location, $cookieStore, myfactory) {
