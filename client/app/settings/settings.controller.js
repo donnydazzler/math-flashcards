@@ -14,7 +14,8 @@ angular.module('yoFlashcardFullstackApp')
     $scope.mathFunctions = [
       'Addition',
       'Subtraction',
-      'Multiplication'
+      'Multiplication',
+      'Division'
     ];
 
     // setup drop-down data
