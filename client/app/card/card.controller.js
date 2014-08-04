@@ -25,6 +25,11 @@ function getAnswer(num1, num2, mathFunction) {
     symbol = '*';
   }
 
+  if (mathFunction === 'Division') {
+    answer = Number(num1) / num2;
+    symbol = '/';
+  }
+
   return {
     answer: answer,
     symbol: symbol
@@ -56,7 +61,14 @@ angular.module('yoFlashcardFullstackApp')
       var questionData;
       $scope.firstNumber = getRandomInt(0, Number($scope.selectedMaxNumber) + 1);
       $scope.secondNumber = getRandomInt(0, Number($scope.selectedMaxNumber) + 1);
+
+      // ensure first number is greater than the second number
       if ($scope.firstNumber < $scope.secondNumber) {
+        $scope.nextQuestion();
+      }
+
+      // if doing division, ensure remainder is 0
+      if ($scope.selectedMathFunction === 'Division' && ($scope.firstNumber % $scope.secondNumber !== 0)) {
         $scope.nextQuestion();
       }
 
