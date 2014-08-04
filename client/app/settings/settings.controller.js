@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name yoFlashcardAppApp.controller:ConfigController
+ * @name yoFlashcardFullstackApp.controller:SettingsCtrl
  * @description
- * # ConfigController
- * ConfigController of the yoFlashcardAppApp
+ * # SettingsCtrl
+ * SettingsCtrl of the yoFlashcardFullstackApp
  */
 angular.module('yoFlashcardFullstackApp')
   .controller('SettingsCtrl', function ($scope, $cookieStore, myfactory) {
