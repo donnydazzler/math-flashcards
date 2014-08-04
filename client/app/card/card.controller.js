@@ -5,7 +5,7 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-// Calculate the answer
+// calculate the answer
 function getAnswer(num1, num2, mathFunction) {
   var answer;
 
@@ -46,13 +46,13 @@ function getMathSymbol(mathFunction) {
 
 /**
  * @ngdoc function
- * @name yoFlashcardAppApp.controller:CardController
+ * @name yoFlashcardAppApp.controller:CardCtrl
  * @description
- * # CardController
- * CardController of the yoFlashcardAppApp
+ * # CardCtrl
+ * CardCtrl of the yoFlashcardAppApp
  */
 angular.module('yoFlashcardFullstackApp')
-  .controller('CardCtrl', function ($scope, myfactory, $location, $cookieStore) {
+  .controller('CardCtrl', function ($scope, $location, $cookieStore, myfactory) {
 
     if ($cookieStore.get('math-flashcards.selectedMaxNumber') === 0) {
       $location.path('/settings');
