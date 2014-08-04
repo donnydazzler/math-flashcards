@@ -1,47 +1,34 @@
 'use strict';
 
-// Returns a random integer between min (included) and max (excluded)
+// returns a random integer between min (included) and max (excluded)
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-// calculate the answer
+// returns the answer and math symbol
 function getAnswer(num1, num2, mathFunction) {
-  var answer;
+  var answer, symbol;
 
   if (mathFunction === 'Addition') {
     answer = Number(num1) + num2;
-  }
-
-  if (mathFunction === 'Subtraction') {
-    answer = Number(num1) - num2;
-  }
-
-
-  if (mathFunction === 'Multiplication') {
-    answer = Number(num1) * num2;
-  }
-
-  return answer;
-}
-
-function getMathSymbol(mathFunction) {
-  var symbol;
-
-  if (mathFunction === 'Addition') {
     symbol = '+';
   }
 
   if (mathFunction === 'Subtraction') {
+    answer = Number(num1) - num2;
     symbol = '-';
   }
 
 
   if (mathFunction === 'Multiplication') {
+    answer = Number(num1) * num2;
     symbol = '*';
   }
 
-  return symbol;
+  return {
+    answer: answer,
+    symbol: symbol
+  };
 }
 
 /**
@@ -54,34 +41,38 @@ function getMathSymbol(mathFunction) {
 angular.module('yoFlashcardFullstackApp')
   .controller('CardCtrl', function ($scope, $location, $cookieStore, myfactory) {
 
+    // redirect to settings view if no max number
     if ($cookieStore.get('math-flashcards.selectedMaxNumber') === 0) {
       $location.path('/settings');
     }
 
-    // get data from cookie
+    // get session data from cookie
     $scope.selectedMathFunction = $cookieStore.get('math-flashcards.selectedMathFunction');
     $scope.selectedMaxNumber = $cookieStore.get('math-flashcards.selectedMaxNumber');
     $scope.score = $cookieStore.get('math-flashcards.score') || 0;
 
-    // determine math symbol
-    $scope.mathSymbol = getMathSymbol($scope.selectedMathFunction);
-
-    // setup question
+    // get question
     $scope.nextQuestion = function () {
+      var questionData;
       $scope.firstNumber = getRandomInt(0, Number($scope.selectedMaxNumber) + 1);
       $scope.secondNumber = getRandomInt(0, Number($scope.selectedMaxNumber) + 1);
       if ($scope.firstNumber < $scope.secondNumber) {
         $scope.nextQuestion();
       }
-      $scope.answer = getAnswer($scope.firstNumber, $scope.secondNumber, $scope.selectedMathFunction);
+
+      questionData = getAnswer($scope.firstNumber, $scope.secondNumber, $scope.selectedMathFunction);
+      $scope.answer = questionData.answer;
+      $scope.mathSymbol = questionData.symbol;
       $scope.enteredAnswer = null;
     };
 
     // verify answer
     $scope.verify = function () {
+
       if ($scope.enteredAnswer === null) {
         return;
       }
+
       if ($scope.answer === Number($scope.enteredAnswer)) {
         $scope.score += 10;
         $cookieStore.put('math-flashcards.score', $scope.score);
@@ -96,7 +87,7 @@ angular.module('yoFlashcardFullstackApp')
       $scope.enteredAnswer = null;
     };
 
-    // set question
+    // get question
     $scope.nextQuestion();
 
     // hide image
