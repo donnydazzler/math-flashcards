@@ -106,11 +106,17 @@ angular.module('yoFlashcardFullstackApp')
         "http://fanart.tv/fanart/tv/81164/characterart/super-why-515e7ef8e0af7.png",
         "http://img1.wikia.nocookie.net/__cb20140518200859/plantsvszombies/images/1/1c/Gatling_pea_2.png",
         "http://img1.wikia.nocookie.net/__cb20140518200531/plantsvszombies/images/a/a2/Samurai_Repeater.png",
-        "http://fc00.deviantart.net/fs71/i/2013/267/a/8/plants_vs__zombie_mario_by_vinny_vieh-d6nn9ci.png",
-        "http://cdn3.volusion.com/jants.petuy/v/vspfiles/photos/19969-3.gif?1375876872",
-        "http://cdn3.volusion.com/jants.petuy/v/vspfiles/photos/19968-3.gif?1375876833",
-        "http://cdn3.volusion.com/jants.petuy/v/vspfiles/photos/19963-3.gif?1375876023",
-        "http://www.cuded.com/wp-content/uploads/2011/01/20110129_sunflower_by_welikegroovyturtles_d35wtj4.png"
+        "http://www.cuded.com/wp-content/uploads/2011/01/20110129_sunflower_by_welikegroovyturtles_d35wtj4.png",
+        "http://static.capcom.com/character_api/umvc3/profile/thor.png",
+        "http://2.bp.blogspot.com/_PwE0l3DVxfU/TDOiQL4YcUI/AAAAAAAAITw/Nivx7xsGFBE/s1600/Render+-+Feito+por+Erickson.gif",
+        "http://fc02.deviantart.net/fs71/f/2013/331/c/e/harry_potter_png_by_shutupdemi-d6vxew1.png",
+        "http://1.bp.blogspot.com/-DqC0tbjjWNk/UhFGfFJSMmI/AAAAAAAAAiE/uvJ0_KRfl5s/s1600/JackSparrow.png",
+        "http://static.comicvine.com/uploads/original/11113/111130081/3336882-4911177864-588px.png",
+        "http://www.pinaldave.com/bimg/captain-america.png",
+        "http://img2.wikia.nocookie.net/__cb20140504024801/deathbattle/images/4/4b/Spiderman_png_by_captainjackharkness-d5cbru1.png",
+        "http://www.mackrichardson.com/wp-content/uploads/2012/02/superman_john_byrne1.png",
+        "http://www.auburn.edu/academic/education/reading_genie/discov/mouse.gif",
+        "http://img2.wikia.nocookie.net/__cb20110527111214/disney/images/9/97/Perry_The_Platypus_2.png"
       ]
     };
 
