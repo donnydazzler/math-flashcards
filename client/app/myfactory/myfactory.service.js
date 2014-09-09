@@ -116,7 +116,19 @@ angular.module('yoFlashcardFullstackApp')
         "http://img2.wikia.nocookie.net/__cb20140504024801/deathbattle/images/4/4b/Spiderman_png_by_captainjackharkness-d5cbru1.png",
         "http://www.mackrichardson.com/wp-content/uploads/2012/02/superman_john_byrne1.png",
         "http://www.auburn.edu/academic/education/reading_genie/discov/mouse.gif",
-        "http://img2.wikia.nocookie.net/__cb20110527111214/disney/images/9/97/Perry_The_Platypus_2.png"
+        "http://img2.wikia.nocookie.net/__cb20110527111214/disney/images/9/97/Perry_The_Platypus_2.png",
+        "http://www.hasbro.com/common/productimages/en_US/6aa9852d5056900b1003790068155ff0/7C5D3D675056900B10D117F284691EB6.png",
+        "http://www.hasbro.com/common/productimages/en_US/4008abf850569047f5b18f4cb6b2ff10/686D5D5450569047F5F92E100F80FB3A.png",
+        "http://www.hasbro.com/common/productimages/en_US/16e4a33150569047f51af9cfd55bedd3/7D70D10C50569047F5A816DB553C2568.png",
+        "http://fc07.deviantart.net/fs71/i/2012/147/d/3/rescue_bot_deputy_by_sso02v-d51b998.png",
+        "http://www.hasbro.com/common/productimages/en_US/16ea5d3150569047f57ef3693ad3f045/7D712A3850569047F5A18EC7D6048405.png",
+        "http://www.hasbro.com/common/productimages/en_US/1ae9869150569047f59f62cb19cd3dd2/A67241D250569047F5F4ACD783E787C6.png",
+        "http://fc03.deviantart.net/fs71/f/2013/156/b/b/rescuesample_by_sketch_nazi-d67vnhy.png",
+        "http://www.hasbro.com/common/productimages/en_US/6a9e91d45056900b107afcede55fc09a/7C4F3D515056900B10CB3D2D5514503B.png",
+        "http://www.hasbro.com/common/productimages/en_US/1d8bbacb5056900b1036a9fe1f311f14/751C559A5056900B10B85521FA499371.png",
+        "http://www.hasbro.com/common/productimages/en_US/1d8bbacb5056900b1036a9fe1f311f14/751C4E275056900B1066105A73B8CCA5.png",
+        "http://www.hasbro.com/common/productimages/en_US/5f8a3db55056900b10792f5e5dfabf9a/56F3B2015056900B107F3BB89B959C27.png",
+        "http://www.alphabetsoup.com/common/productimages/en_US/1ae9869150569047f59f62cb19cd3dd2/A67270A350569047F5165741978A65B8.png"
       ]
     };
 
