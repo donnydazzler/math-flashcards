@@ -8,7 +8,7 @@
  * SettingsCtrl of the yoFlashcardFullstackApp
  */
 angular.module('yoFlashcardFullstackApp')
-  .controller('SettingsCtrl', function ($scope, $cookieStore, myfactory) {
+  .controller('SettingsCtrl', function ($scope, $cookieStore) {
 
     // setup drop-down data
     $scope.mathFunctions = [
