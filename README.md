@@ -15,6 +15,7 @@ Requires Node.js 0.10+.
 	git clone https://github.com/gmillward/math-flashcards.git
 	cd math-flashcards/
 	npm install
+	bower install
 	grunt serve
 	http://localhost:9000/
 
