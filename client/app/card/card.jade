@@ -8,11 +8,13 @@
 
   .well.h1
     .row
-      .col-xs-6.text-right
-      .col-xs-6.text-left {{firstNumber}}
+      .col-xs-5
+      .col-xs-2.text-right {{firstNumber}}
+      .col-xs-5
     .row
-      .col-xs-6.text-right(ng-bind-html='mathSymbol')
-      .col-xs-6.text-left {{secondNumber}}
+      .col-xs-5.text-right(ng-bind-html='mathSymbol')
+      .col-xs-2.text-right {{secondNumber}}
+      .col-xs-5
 
   hr
 
