@@ -19,7 +19,7 @@ angular.module('yoFlashcardFullstackApp')
     ];
 
     // setup drop-down data
-    $scope.maxNumber = 12;
+    $scope.maxNumber = 15;
     $scope.getNumber = function (num) {
       return new Array(num);
     };
